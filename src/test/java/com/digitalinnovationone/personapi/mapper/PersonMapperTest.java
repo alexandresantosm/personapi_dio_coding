@@ -26,7 +26,7 @@ public class PersonMapperTest {
         PersonDTO personDTO = createFakePersonDTO();
         Person expectedPerson = createFakePersonEntity();
 
-        when(personMapper.toModel(personDTO)).thenReturn(expectedPerson);
+        lenient().when(personMapper.toModel(personDTO)).thenReturn(expectedPerson);
 
         assertEquals(personDTO.getFirstName(), expectedPerson.getFirstName());
         assertEquals(personDTO.getLastName(), expectedPerson.getLastName());
@@ -44,7 +44,7 @@ public class PersonMapperTest {
         Person person = createFakePersonEntity();
         PersonDTO expectedPersonDTO = createFakePersonDTO();
 
-        when(personMapper.toDTO(person)).thenReturn(expectedPersonDTO);
+        lenient().when(personMapper.toDTO(person)).thenReturn(expectedPersonDTO);
 
         assertEquals(person.getFirstName(), expectedPersonDTO.getFirstName());
         assertEquals(person.getLastName(), expectedPersonDTO.getLastName());
